@@ -10,28 +10,28 @@
         sh:NodeShape ;
     rdfs:comment "Provides information about the fields in the AI package profile."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Software/Package> ;
-    sh:property [ sh:path <https://rdf.spdx.org/v3/AI/metric> ],
-        [ sh:path <https://rdf.spdx.org/v3/AI/hyperparameter> ],
+    sh:property [ sh:path <https://rdf.spdx.org/v3/AI/typeOfModel> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/AI/informationAboutApplication> ],
+            sh:path <https://rdf.spdx.org/v3/AI/energyConsumption> ],
+        [ sh:path <https://rdf.spdx.org/v3/AI/hyperparameter> ],
+        [ sh:path <https://rdf.spdx.org/v3/AI/modelExplainability> ],
+        [ sh:path <https://rdf.spdx.org/v3/AI/modelDataPreprocessing> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/AI/autonomyType> ],
+        [ sh:path <https://rdf.spdx.org/v3/AI/domain> ],
+        [ sh:path <https://rdf.spdx.org/v3/AI/standardCompliance> ],
+        [ sh:path <https://rdf.spdx.org/v3/AI/metric> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/AI/sensitivePersonalInformation> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/AI/limitation> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/AI/autonomyType> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/AI/informationAboutTraining> ],
-        [ sh:path <https://rdf.spdx.org/v3/AI/modelExplainability> ],
-        [ sh:path <https://rdf.spdx.org/v3/AI/standardCompliance> ],
-        [ sh:path <https://rdf.spdx.org/v3/AI/domain> ],
-        [ sh:path <https://rdf.spdx.org/v3/AI/modelDataPreprocessing> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/AI/sensitivePersonalInformation> ],
-        [ sh:path <https://rdf.spdx.org/v3/AI/typeOfModel> ],
-        [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/AI/safetyRiskAssessment> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/AI/energyConsumption> ],
-        [ sh:path <https://rdf.spdx.org/v3/AI/metricDecisionThreshold> ] .
+            sh:path <https://rdf.spdx.org/v3/AI/informationAboutApplication> ],
+        [ sh:path <https://rdf.spdx.org/v3/AI/metricDecisionThreshold> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/AI/informationAboutTraining> ] .
 
 <https://rdf.spdx.org/v3/AI/SafetyRiskAssessmentType> a rdfs:Class,
         owl:Class ;
@@ -43,19 +43,19 @@
     rdfs:comment "Class that describes a build instance of software/artifacts."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Core/Element> ;
     sh:property [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Build/buildId> ],
+        [ sh:path <https://rdf.spdx.org/v3/Build/configSourceDigest> ],
+        [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Build/buildEndTime> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Build/buildId> ],
-        [ sh:path <https://rdf.spdx.org/v3/Build/parameters> ],
+            sh:path <https://rdf.spdx.org/v3/Build/buildStartTime> ],
+        [ sh:path <https://rdf.spdx.org/v3/Build/configSourceEntrypoint> ],
+        [ sh:path <https://rdf.spdx.org/v3/Build/environment> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Build/buildType> ],
         [ sh:path <https://rdf.spdx.org/v3/Build/configSourceUri> ],
-        [ sh:path <https://rdf.spdx.org/v3/Build/configSourceEntrypoint> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Build/buildStartTime> ],
-        [ sh:path <https://rdf.spdx.org/v3/Build/configSourceDigest> ],
-        [ sh:path <https://rdf.spdx.org/v3/Build/environment> ] .
+        [ sh:path <https://rdf.spdx.org/v3/Build/parameters> ] .
 
 <https://rdf.spdx.org/v3/Core/Agent> a rdfs:Class,
         owl:Class ;
@@ -68,15 +68,15 @@
     rdfs:comment "An assertion made in relation to one or more elements."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Core/Element> ;
     sh:property [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/contentType> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/statement> ],
-        [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/subject> ],
         [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/contentType> ],
+        [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/annotationType> ] .
+            sh:path <https://rdf.spdx.org/v3/Core/annotationType> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/statement> ] .
 
 <https://rdf.spdx.org/v3/Core/AnnotationType> a rdfs:Class,
         owl:Class ;
@@ -87,17 +87,17 @@
         sh:NodeShape ;
     rdfs:comment "A distinct article or unit within the digital domain."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Core/Element> ;
-    sh:property [ sh:path <https://rdf.spdx.org/v3/Core/standardName> ],
+    sh:property [ sh:path <https://rdf.spdx.org/v3/Core/supportLevel> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/builtTime> ],
-        [ sh:path <https://rdf.spdx.org/v3/Core/supportLevel> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/validUntilTime> ],
         [ sh:path <https://rdf.spdx.org/v3/Core/originatedBy> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/suppliedBy> ],
+            sh:path <https://rdf.spdx.org/v3/Core/validUntilTime> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/releaseTime> ] .
+            sh:path <https://rdf.spdx.org/v3/Core/releaseTime> ],
+        [ sh:path <https://rdf.spdx.org/v3/Core/standardName> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/suppliedBy> ] .
 
 <https://rdf.spdx.org/v3/Core/Bom> a rdfs:Class,
         owl:Class ;
@@ -118,14 +118,14 @@
         sh:NodeShape ;
     rdfs:comment "Provides information about the creation of the Element."@en ;
     sh:property [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/comment> ],
+            sh:minCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/created> ],
         [ sh:path <https://rdf.spdx.org/v3/Core/createdUsing> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/comment> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/specVersion> ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/created> ],
         [ sh:minCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/createdBy> ] .
 
@@ -144,23 +144,23 @@
         sh:NodeShape ;
     rdfs:comment "Base domain class from which all other SPDX-3.0 domain classes derive."@en ;
     sh:property [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/comment> ],
-        [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/name> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/description> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/comment> ],
+        [ sh:path <https://rdf.spdx.org/v3/Core/verifiedUsing> ],
         [ sh:path <https://rdf.spdx.org/v3/Core/externalIdentifier> ],
+        [ sh:path <https://rdf.spdx.org/v3/Core/externalRef> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/summary> ],
-        [ sh:path <https://rdf.spdx.org/v3/Core/verifiedUsing> ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/spdxId> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/creationInfo> ],
-        [ sh:path <https://rdf.spdx.org/v3/Core/extension> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/description> ],
-        [ sh:path <https://rdf.spdx.org/v3/Core/externalRef> ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/spdxId> ] .
+        [ sh:path <https://rdf.spdx.org/v3/Core/extension> ] .
 
 <https://rdf.spdx.org/v3/Core/ElementCollection> a rdfs:Class,
         owl:Class,
@@ -168,24 +168,24 @@
     rdfs:comment "A collection of Elements, not necessarily with unifying context."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Core/Element> ;
     sh:property [ sh:path <https://rdf.spdx.org/v3/Core/element> ],
-        [ sh:path <https://rdf.spdx.org/v3/Core/rootElement> ],
-        [ sh:path <https://rdf.spdx.org/v3/Core/profileConformance> ] .
+        [ sh:path <https://rdf.spdx.org/v3/Core/profileConformance> ],
+        [ sh:path <https://rdf.spdx.org/v3/Core/rootElement> ] .
 
 <https://rdf.spdx.org/v3/Core/ExternalIdentifier> a rdfs:Class,
         owl:Class,
         sh:NodeShape ;
     rdfs:comment "A reference to a resource outside the scope of SPDX-3.0 content that uniquely identifies an Element."@en ;
-    sh:property [ sh:path <https://rdf.spdx.org/v3/Core/identifierLocator> ],
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/identifier> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/issuingAuthority> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/identifier> ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/externalIdentifierType> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/comment> ] .
+            sh:path <https://rdf.spdx.org/v3/Core/comment> ],
+        [ sh:path <https://rdf.spdx.org/v3/Core/identifierLocator> ] .
 
 <https://rdf.spdx.org/v3/Core/ExternalIdentifierType> a rdfs:Class,
         owl:Class ;
@@ -197,24 +197,24 @@
     rdfs:comment "A map of Element identifiers that are used within a Document but defined external to that Document."@en ;
     sh:property [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/definingArtifact> ],
-        [ sh:path <https://rdf.spdx.org/v3/Core/verifiedUsing> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/locationHint> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/externalSpdxId> ] .
+            sh:path <https://rdf.spdx.org/v3/Core/externalSpdxId> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/locationHint> ],
+        [ sh:path <https://rdf.spdx.org/v3/Core/verifiedUsing> ] .
 
 <https://rdf.spdx.org/v3/Core/ExternalRef> a rdfs:Class,
         owl:Class,
         sh:NodeShape ;
     rdfs:comment "A reference to a resource outside the scope of SPDX-3.0 content."@en ;
-    sh:property [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/contentType> ],
+    sh:property [ sh:path <https://rdf.spdx.org/v3/Core/locator> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/comment> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/externalRefType> ],
-        [ sh:path <https://rdf.spdx.org/v3/Core/locator> ] .
+            sh:path <https://rdf.spdx.org/v3/Core/contentType> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/externalRefType> ] .
 
 <https://rdf.spdx.org/v3/Core/ExternalRefType> a rdfs:Class,
         owl:Class ;
@@ -227,10 +227,10 @@
     rdfs:subClassOf <https://rdf.spdx.org/v3/Core/IntegrityMethod> ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/hashValue> ],
+            sh:path <https://rdf.spdx.org/v3/Core/algorithm> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/algorithm> ] .
+            sh:path <https://rdf.spdx.org/v3/Core/hashValue> ] .
 
 <https://rdf.spdx.org/v3/Core/HashAlgorithm> a rdfs:Class,
         owl:Class ;
@@ -292,10 +292,10 @@
     rdfs:comment "A tuple of two positive integers that define a range."@en ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/beginIntegerRange> ],
+            sh:path <https://rdf.spdx.org/v3/Core/endIntegerRange> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/endIntegerRange> ] .
+            sh:path <https://rdf.spdx.org/v3/Core/beginIntegerRange> ] .
 
 <https://rdf.spdx.org/v3/Core/PresenceType> a rdfs:Class,
         owl:Class ;
@@ -311,18 +311,18 @@
     rdfs:comment "Describes a relationship between one or more elements."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Core/Element> ;
     sh:property [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/endTime> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/completeness> ],
-        [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/from> ],
-        [ sh:path <https://rdf.spdx.org/v3/Core/to> ],
-        [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/startTime> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/relationshipType> ] .
+            sh:path <https://rdf.spdx.org/v3/Core/relationshipType> ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/from> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/completeness> ],
+        [ sh:path <https://rdf.spdx.org/v3/Core/to> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Core/endTime> ] .
 
 <https://rdf.spdx.org/v3/Core/RelationshipCompleteness> a rdfs:Class,
         owl:Class ;
@@ -342,10 +342,10 @@
         sh:NodeShape ;
     rdfs:comment "A collection of SPDX Elements that could potentially be serialized."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Core/ElementCollection> ;
-    sh:property [ sh:path <https://rdf.spdx.org/v3/Core/namespaceMap> ],
-        [ sh:maxCount 1 ;
+    sh:property [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Core/dataLicense> ],
-        [ sh:path <https://rdf.spdx.org/v3/Core/imports> ] .
+        [ sh:path <https://rdf.spdx.org/v3/Core/imports> ],
+        [ sh:path <https://rdf.spdx.org/v3/Core/namespaceMap> ] .
 
 <https://rdf.spdx.org/v3/Core/SupportType> a rdfs:Class,
         owl:Class ;
@@ -365,28 +365,28 @@
         sh:NodeShape ;
     rdfs:comment "Provides information about the fields in the Dataset profile."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Software/Package> ;
-    sh:property [ sh:path <https://rdf.spdx.org/v3/Dataset/dataPreprocessing> ],
-        [ sh:path <https://rdf.spdx.org/v3/Dataset/sensor> ],
-        [ sh:path <https://rdf.spdx.org/v3/Dataset/anonymizationMethodUsed> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Dataset/datasetSize> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Dataset/dataCollectionProcess> ],
+    sh:property [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Dataset/datasetUpdateMechanism> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Dataset/intendedUse> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Dataset/datasetNoise> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Dataset/confidentialityLevel> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Dataset/datasetUpdateMechanism> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Dataset/datasetAvailability> ],
+            sh:path <https://rdf.spdx.org/v3/Dataset/dataCollectionProcess> ],
+        [ sh:minCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Dataset/datasetType> ],
         [ sh:path <https://rdf.spdx.org/v3/Dataset/knownBias> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Dataset/sensitivePersonalInformation> ],
-        [ sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Dataset/datasetType> ] .
+        [ sh:path <https://rdf.spdx.org/v3/Dataset/sensor> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Dataset/confidentialityLevel> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Dataset/datasetNoise> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Dataset/datasetSize> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Dataset/datasetAvailability> ],
+        [ sh:path <https://rdf.spdx.org/v3/Dataset/anonymizationMethodUsed> ],
+        [ sh:path <https://rdf.spdx.org/v3/Dataset/dataPreprocessing> ] .
 
 <https://rdf.spdx.org/v3/Dataset/DatasetAvailabilityType> a rdfs:Class,
         owl:Class ;
@@ -439,24 +439,24 @@ where only any one of the elements applies."""@en ;
         sh:NodeShape ;
     rdfs:comment "Abstract class for the portion of an AnyLicenseInfo representing a license."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/ExpandedLicensing/ExtendableLicense> ;
-    sh:property [ sh:maxCount 1 ;
+    sh:property [ sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/seeAlso> ],
+        [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/isDeprecatedLicenseId> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/licenseXml> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/standardLicenseTemplate> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/isOsiApproved> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/standardLicenseHeader> ],
         [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/standardLicenseTemplate> ],
+        [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/obsoletedBy> ],
         [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/SimpleLicensing/licenseText> ],
-        [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/isFsfLibre> ],
-        [ sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/seeAlso> ] .
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/licenseXml> ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/SimpleLicensing/licenseText> ] .
 
 <https://rdf.spdx.org/v3/ExpandedLicensing/LicenseAddition> a rdfs:Class,
         owl:Class,
@@ -464,7 +464,8 @@ where only any one of the elements applies."""@en ;
     rdfs:comment """Abstract class for additional text intended to be added to a License, but
 which is not itself a standalone License."""@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Core/Element> ;
-    sh:property [ sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/seeAlso> ],
+    sh:property [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/isDeprecatedAdditionId> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/licenseXml> ],
         [ sh:maxCount 1 ;
@@ -472,10 +473,9 @@ which is not itself a standalone License."""@en ;
             sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/additionText> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/obsoletedBy> ],
+        [ sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/seeAlso> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/standardAdditionTemplate> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/isDeprecatedAdditionId> ] .
+            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/standardAdditionTemplate> ] .
 
 <https://rdf.spdx.org/v3/ExpandedLicensing/ListedLicense> a rdfs:Class,
         owl:Class,
@@ -483,9 +483,9 @@ which is not itself a standalone License."""@en ;
     rdfs:comment "A license that is listed on the SPDX License List."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/ExpandedLicensing/License> ;
     sh:property [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/listVersionAdded> ],
+            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/deprecatedVersion> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/deprecatedVersion> ] .
+            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/listVersionAdded> ] .
 
 <https://rdf.spdx.org/v3/ExpandedLicensing/ListedLicenseException> a rdfs:Class,
         owl:Class,
@@ -493,9 +493,9 @@ which is not itself a standalone License."""@en ;
     rdfs:comment "A license exception that is listed on the SPDX Exceptions list."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/ExpandedLicensing/LicenseAddition> ;
     sh:property [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/deprecatedVersion> ],
+            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/listVersionAdded> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/listVersionAdded> ] .
+            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/deprecatedVersion> ] .
 
 <https://rdf.spdx.org/v3/ExpandedLicensing/OrLaterOperator> a rdfs:Class,
         owl:Class,
@@ -515,10 +515,10 @@ text applied to it."""@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/SimpleLicensing/AnyLicenseInfo> ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/subjectAddition> ],
+            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/subjectExtendableLicense> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/subjectExtendableLicense> ] .
+            sh:path <https://rdf.spdx.org/v3/ExpandedLicensing/subjectAddition> ] .
 
 <https://rdf.spdx.org/v3/Extension/Extension> a rdfs:Class,
         owl:Class ;
@@ -535,10 +535,10 @@ text applied to it."""@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Security/VulnAssessmentRelationship> ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/vectorString> ],
+            sh:path <https://rdf.spdx.org/v3/Security/score> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/score> ] .
+            sh:path <https://rdf.spdx.org/v3/Security/vectorString> ] .
 
 <https://rdf.spdx.org/v3/Security/CvssV3VulnAssessmentRelationship> a rdfs:Class,
         owl:Class,
@@ -547,10 +547,10 @@ text applied to it."""@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Security/VulnAssessmentRelationship> ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/vectorString> ],
+            sh:path <https://rdf.spdx.org/v3/Security/severity> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/severity> ],
+            sh:path <https://rdf.spdx.org/v3/Security/vectorString> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Security/score> ] .
@@ -562,10 +562,10 @@ text applied to it."""@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Security/VulnAssessmentRelationship> ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/vectorString> ],
+            sh:path <https://rdf.spdx.org/v3/Security/severity> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/severity> ],
+            sh:path <https://rdf.spdx.org/v3/Security/vectorString> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Security/score> ] .
@@ -577,13 +577,13 @@ text applied to it."""@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Security/VulnAssessmentRelationship> ;
     sh:property [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/probability> ],
+            sh:path <https://rdf.spdx.org/v3/Security/percentile> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Security/publishedTime> ],
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/percentile> ] .
+            sh:path <https://rdf.spdx.org/v3/Security/probability> ] .
 
 <https://rdf.spdx.org/v3/Security/ExploitCatalogType> a rdfs:Class,
         owl:Class ;
@@ -623,9 +623,9 @@ text applied to it."""@en ;
     rdfs:comment """Connects a vulnerability and an element designating the element as a product
 affected by the vulnerability."""@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Security/VexVulnAssessmentRelationship> ;
-    sh:property [ sh:path <https://rdf.spdx.org/v3/Security/actionStatementTime> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/actionStatement> ] .
+    sh:property [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Security/actionStatement> ],
+        [ sh:path <https://rdf.spdx.org/v3/Security/actionStatementTime> ] .
 
 <https://rdf.spdx.org/v3/Security/VexFixedVulnAssessmentRelationship> a rdfs:Class,
         owl:Class ;
@@ -644,9 +644,9 @@ a fix has been applied and are no longer affected."""@en ;
 not affected by the vulnerability."""@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Security/VexVulnAssessmentRelationship> ;
     sh:property [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/impactStatement> ],
-        [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Security/justificationType> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Security/impactStatement> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Security/impactStatementTime> ] .
 
@@ -672,15 +672,15 @@ investigated."""@en ;
     rdfs:comment "Abstract ancestor class for all vulnerability assessments"@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Core/Relationship> ;
     sh:property [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/publishedTime> ],
+            sh:path <https://rdf.spdx.org/v3/Core/suppliedBy> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Security/assessedElement> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Security/modifiedTime> ],
+            sh:path <https://rdf.spdx.org/v3/Security/publishedTime> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Security/withdrawnTime> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Core/suppliedBy> ] .
+            sh:path <https://rdf.spdx.org/v3/Security/modifiedTime> ] .
 
 <https://rdf.spdx.org/v3/Security/Vulnerability> a rdfs:Class,
         owl:Class,
@@ -706,12 +706,12 @@ according to the SPDX license expression syntax."""@en ;
         sh:NodeShape ;
     rdfs:comment "An SPDX Element containing an SPDX license expression string."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/SimpleLicensing/AnyLicenseInfo> ;
-    sh:property [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/SimpleLicensing/licenseExpression> ],
+    sh:property [ sh:path <https://rdf.spdx.org/v3/SimpleLicensing/customIdToUri> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/SimpleLicensing/licenseListVersion> ],
-        [ sh:path <https://rdf.spdx.org/v3/SimpleLicensing/customIdToUri> ] .
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/SimpleLicensing/licenseExpression> ] .
 
 <https://rdf.spdx.org/v3/SimpleLicensing/SimpleLicensingText> a rdfs:Class,
         owl:Class,
@@ -738,15 +738,15 @@ according to the SPDX license expression syntax."""@en ;
     rdfs:comment "Refers to any unit of content that can be associated with a distribution of software."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Software/SoftwareArtifact> ;
     sh:property [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Software/sourceInfo> ],
-        [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Software/packageUrl> ],
-        [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Software/downloadLocation> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Software/packageVersion> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Software/homePage> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Software/packageVersion> ] .
+            sh:path <https://rdf.spdx.org/v3/Software/packageUrl> ],
+        [ sh:maxCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Software/sourceInfo> ] .
 
 <https://rdf.spdx.org/v3/Software/Sbom> a rdfs:Class,
         owl:Class,
@@ -765,26 +765,26 @@ according to the SPDX license expression syntax."""@en ;
     rdfs:comment "Describes a certain part of a file."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Software/SoftwareArtifact> ;
     sh:property [ sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Software/snippetFromFile> ],
+            sh:path <https://rdf.spdx.org/v3/Software/byteRange> ],
         [ sh:maxCount 1 ;
             sh:path <https://rdf.spdx.org/v3/Software/lineRange> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Software/byteRange> ] .
+            sh:minCount 1 ;
+            sh:path <https://rdf.spdx.org/v3/Software/snippetFromFile> ] .
 
 <https://rdf.spdx.org/v3/Software/SoftwareArtifact> a rdfs:Class,
         owl:Class,
         sh:NodeShape ;
     rdfs:comment "A distinct article or unit related to Software."@en ;
     rdfs:subClassOf <https://rdf.spdx.org/v3/Core/Artifact> ;
-    sh:property [ sh:path <https://rdf.spdx.org/v3/Software/additionalPurpose> ],
-        [ sh:maxCount 2 ;
+    sh:property [ sh:maxCount 2 ;
             sh:path <https://rdf.spdx.org/v3/Software/gitoid> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Software/primaryPurpose> ],
-        [ sh:path <https://rdf.spdx.org/v3/Software/attributionText> ],
+            sh:path <https://rdf.spdx.org/v3/Software/copyrightText> ],
         [ sh:maxCount 1 ;
-            sh:path <https://rdf.spdx.org/v3/Software/copyrightText> ] .
+            sh:path <https://rdf.spdx.org/v3/Software/primaryPurpose> ],
+        [ sh:path <https://rdf.spdx.org/v3/Software/additionalPurpose> ],
+        [ sh:path <https://rdf.spdx.org/v3/Software/attributionText> ] .
 
 <https://rdf.spdx.org/v3/Software/SoftwarePurpose> a rdfs:Class,
         owl:Class ;
