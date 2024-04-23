@@ -1,0 +1,34 @@
+site_name: SPDX v3 Specification
+copyright: DRAFT version generated from d25ae89 (model) by 85e8d65 (parser)
+use_directory_urls: true
+theme: readthedocs
+plugins:
+- search
+- pdf-export:
+    combined: true
+extra_css:
+- css/style.css
+markdown_extensions:
+- codehilite:
+   guess_lang: false
+nav:
+- 'Copyright': index.md
+- 'Introduction': introduction.md
+- 'Scope': scope.md
+- 'Normative references': normative-references.md
+- 'Terms and definitions': terms-and-definitions.md
+- 'Model and serializations': serializations.md
+- 'Bibliography': bibliography.md
+@MODEL_TOC@
+- annexes:
+  - 'Diffs from Previous Editions': annexes/diffs-from-previous-editions.md
+  - 'Getting started with SPDX 3': annexes/getting-started.md
+  - 'RDF Object Model and Identifier Syntax': annexes/RDF-object-model-and-identifier-syntax.md
+  - 'SPDX License Expressions': annexes/SPDX-license-expressions.md
+  - 'Using SPDX short identifiers in Source Files': annexes/using-SPDX-short-identifiers-in-source-files.md
+  - 'Using SPDX to comply with norms, standards and regulation': annexes/using-SPDX-to-comply-with-industry-guidance.md
+  - 'Including Security Information in SPDX': annexes/including-security-information-in-SPDX.md
+  - 'SPDX Lite': annexes/SPDX-Lite.md
+- licenses:
+  - 'Creative Commons Attribution License 3.0 Unported': licenses/CC-BY-3.0.md
+  - 'Community Specification License 1.0': licenses/Community-Spec-1.0.md
