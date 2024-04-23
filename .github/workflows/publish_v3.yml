@@ -42,6 +42,9 @@ jobs:
             --context-url spdx-spec/docs/model/spdx-context.jsonld https://spdx.org/rdf/3.0.1/spdx-context.jsonld \
             jsonschema \
             --output spdx-spec/docs/model/schema.json
+      - name: Generate mkdocs.yml
+        run: /bin/sh bin/create-mkdocs-config.sh
+        working-directory: spdx-spec
       - name: Set git identity
         run: git config user.name ci-bot; git config user.email ci-bot@spdx.dev
         working-directory: spdx-spec
